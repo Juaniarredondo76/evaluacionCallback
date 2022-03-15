@@ -9,7 +9,7 @@ mensajeen consola avisando que han despegado
 Configure la rutina necesaria para despegar la nave utilizando callbacks
  */
 
-function robo(numero1,numero2,numero3,numero4,numero5,numero6,numero7,numero8,numero9,numero10,callback){
+function robar(numero1,numero2,numero3,numero4,numero5,numero6,numero7,numero8,numero9,numero10,callback){
     let arregloPlanos=Array(
         numero1,
         numero2,
@@ -24,13 +24,41 @@ function robo(numero1,numero2,numero3,numero4,numero5,numero6,numero7,numero8,nu
     )
     callback(arregloPlanos)
 }
-robo (1,2,3,4,5,6,7,8,9,10,function(arregloPlanos){
+robar(1,2,300,400,500,600,700,800,900,100,function(arregloPlanos){
 
     let datosFiltrados=arregloPlanos.filter(function(dato){
 
         return(dato>=1 && dato <=10)
     })
-    console.log('Han solo y Chewbacca es han robado ... ' + datosFiltrados.length + ' planos' );  
+    console.log('Tiene una cantidad de planos robados ' + datosFiltrados.length)
+    if(datosFiltrados.length <1){
+        console.log('Han solo y Chewbacca no pudieron robar ningun plano ')
+    }
+    else{
+        console.log(' Chewbacca y Han pueden abordar su nave ya que tiene algunos planos')
+    }
 })
 
- 
+
+
+
+
+
+
+
+
+/*
+robo (1,2,3,4,5,6,7,8,9,10,function(arregloPlanos){
+
+let contador=0
+arregloPlanos.forEach(function(arregloPlanos){
+ contador=contador+arregloPlanos
+
+    if(arregloPlanos >=1 && arregloPlanos <=10 ){
+        console.log("ya pueden abordar su nave Chewbacca y Han porque ya se robaron esta cantidad de planos " + contador + " CORRAN...")
+    }
+    else{
+        console.log("este el plano falso : " + arregloPlanos)
+    }
+})
+})*/
