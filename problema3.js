@@ -14,23 +14,24 @@ callback debe permitir entregar la sumatoria de niveles de
 energía entregados por los alimentos vegetales consumidos en
 la dieta de Grogu.
 */
+export function generarDatos(){
 
-let nombreAlimentos=['cucaracha rostizada','Atascaburras','Bienmesabe','Chochos','Ajoatao','Morteruelo','Patatas a la importancia','Sopa boba','Engañamaridos','Japuta']
-let tipoAlimento=['vegetal','animal','insecto']
-let energia=[200,150,220,100.110]
+    let nombresAlimentos=['cucaracha rostizada','Atascaburras','Bienmesabe','Chochos','Ajoatao','Morteruelo','Patatas a la importancia','Sopa boba','Engañamaridos','Japuta']
+    let tiposAlimentos=['vegetal','animal','insecto']
+    let energia=[200,100,250,500,1000]
+    let alimentos=[]
 
+        //repetir algo 50 veces
+        for(let i=0; i<50;i++){
 
-let comidas=[]
-for(let i=0; i<50; i++){
+            let alimento={}
 
-    let plato={}
+            alimento.nombre=nombresAlimentos[Math.floor(Math.random()*nombresAlimentos.length)]
+            alimento.tipo=tiposAlimentos[Math.floor(Math.random()*tiposAlimentos.length)]
+            alimento.nivel=energia[Math.floor(Math.random()*energia.length)]
 
-    //crear un atributo 
+            alimentos.push(alimento)
 
-    comidas.nombre=(nombreAlimentos[Math.floor(Math.random()*nombreAlimentos.length)])
-    comidas.tipo=(tipoAlimento[Math.floor(Math.random()*tipoAlimento.length)])
-    comidas.energia=(energia[Math.floor(Math.random()*energia.length)])
-
-   comidas.push(plato)
+        }
+        return alimentos
 }
- 
